@@ -3,6 +3,7 @@
 $length=20;
 $width=10;
 
+
 function perimeter($length,$width) {
   echo "Length: ".$length."<br>";
   echo "Width  : ".$width."<br>";
