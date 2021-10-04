@@ -1,25 +1,25 @@
 <?php
 
-function isValidEmail($email)
+function validity($email)
 {
-    $indexOfA = -1;
-    $indexOfDot = -1;
+    $letter = -1;
+    $dot = -1;
     for ($i = 0; $i < strlen($email); ++$i) 
     {
         if ($email[$i] == '@')
         {
-            $indexOfA = $i;
+            $letter = $i;
         }
         if ($email[$i] == '.')
         {
-            $indexOfDot = $i;
+            $dot = $i;
         }
     }
-    if ($indexOfA == -1 || $indexOfDot == -1)
+    if ($letter == -1 || $dot == -1)
     {
         return false;
     }
-    if ($indexOfA < 1 || $indexOfDot == strlen($email) - 1 || $indexOfDot - $indexOfA < 2)
+    if ($letter < 1 || $dot == strlen($email) - 1 || $dot - $letter < 2)
     {
         return false;
     }
@@ -33,7 +33,7 @@ if (isset($_REQUEST['submit']))
         echo "Email can not be empty";
         return;
     }
-    if(!isValidEmail($email))
+    if(!validity($email))
     {
         echo $email.' is not a valid email address';
         return;
