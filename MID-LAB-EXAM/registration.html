@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <fieldset>
+        <legend><b>REGISTRATION</b></legend>
+        <form action="regcheck.php" method="POST">
+
+                    ID <br>
+                    <input name="id" type="text"><br>
+                    Password<br>
+                        <input name="password" type="password"><br>
+                    Confirm Password<br>
+                    <input name="confirmPassword" type="password"><br>
+                    Name<br>
+                    <input name="userName" type="text"><br>
+                    User Type<br><hr>
+                            <input type="radio" name="type" value ="user">User
+                            <input type="radio" name="type" value ="admin">Admin
+            <hr/>
+            <input type="submit" name="submit" value="Submit">
+            <a href="login.html">Sign In</a>
+        </form>
+    </fieldset>
+</body>
+</html>
