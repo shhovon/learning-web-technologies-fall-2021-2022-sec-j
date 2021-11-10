@@ -1,0 +1,26 @@
+#mainDiv {
+  margin: 10px;
+  padding: 10px;
+  margin-left: 130px;
+}
+
+#div1 {
+  padding: 20px;
+  background-color: lightgray;
+  float: left;
+  border-radius: 10px;
+}
+
+#div2 {
+  padding: 30px;
+  margin-left: 20px;
+  background-color: lightgray;
+  float: left;
+  border-radius: 10px;
+}
+
+.img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+}
