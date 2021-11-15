@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group Validation</title>
+</head>
+<body>
+    <div>
+        <div>
+            <fieldset>
+                <legend><label>BLOOD GROUP</label></legend>
+
+                <select name="bloodGroup" id="bloodGroup">
+                    <option disabled selected value> Choose A Blood Group</option>
+                    <option value="A Positive">A+</option>
+                    <option value="A Negative">A-</option>
+                    <option value="B Positive">B+</option>
+                    <option value="B Negative">B-</option>
+                    <option value="B Negative">B-</option>
+                    <option value="AB Positive">AB+</option>
+                    <option value="AB Negative">AB-</option>
+                    <option value="O Positive">O+</option>
+                    <option value="O Negative">O-</option>
+                </select>
+                <span id="error" style='color:red;'>
+
+                </span>
+                <span id="success" style='color:green;'>
+
+                </span>
+                <div style="margin-top:10px;">
+                    <input type="button" onclick="validateBloodGroup()" value="Submit" />
+                </div>
+            </fieldset>
+        </div>
+
+
+        <script>
+            function validateBloodGroup() {
+                if (document.getElementById("bloodGroup").value == "") {
+                    document.getElementById('error').innerHTML = "<span style='color: red'><br><br>Please select a blood type</span>";
+                    return false;
+                } else {
+                    document.getElementById('error').innerHTML = "";
+                    document.getElementById('success').innerHTML = "<span style='color: green'><br><br>Selected!</span>";
+                    return true;
+                }
+            }
+        </script>
+
+</body>
+
+</html>
+</html>

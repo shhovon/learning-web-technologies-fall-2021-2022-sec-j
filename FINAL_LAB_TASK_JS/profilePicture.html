@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Profile Picture</legend>
+        <label>User Id </label><input type="text" name="user_id" id="user_id"><span id="idError"></span><span
+            id="idSuccess"></span>
+        <br>
+        <br>
+        <label>Picture </label><input type="file" id="file"><span id="picError"></span>
+        <span id="picSuccess"></span>
+        <hr>
+        <button type="button" id="submit" onclick="validate()">Submit</button>
+    </fieldset>
+
+
+    <script>
+        var Error1 = document.getElementById('idError');
+        var Error2 = document.getElementById('picError');
+        function validate() {
+            var num = document.getElementById("user_id").value;
+            var file = document.getElementById("file").value;
+            if (num != "" || file != "") {
+                Error1.innerHTML = "<span style='color: red'><br><br>Filup all the fields</span>";
+               
+        }
+
+        function validateFile() {
+            var file = document.getElementById("file").value;
+            if (file != "") {
+                document.getElementById("picError").innerHTML =
+                    "<span style='color:green;'Picture Uploaded!</span>";
+                }
+            else {
+                document.getElementById("picError").innerHTML =
+                    "<span style='color:red;'Upload an Image</span>";
+                return false;
+            }
+        }
+    }
+    </script>
+</body>
+</html>

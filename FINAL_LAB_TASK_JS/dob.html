@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta email="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth Validation</title>
+</head>
+
+<body>
+
+    <div>
+        <fieldset>
+            <legend><label>Date of Birth</label></legend>
+
+            <input type="text" id="day" name="day" value="" placeholder="day"> /
+            <input type="text" id="month" name="month" value="" placeholder="month"> /
+            <input type="text" id="year" name="year" value="" placeholder="year">
+            <span id="error">
+            </span>
+            <span id="dob">
+            </span>
+
+            <hr>
+
+            <div style="margin-top:10px;">
+                <input type="submit" value="Submit" onclick="validateDOB()">
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        function validateDOB() {
+            var dobday = document.getElementById('day').value;
+            var dobmonth = document.getElementById('month').value;
+            var dobyear = document.getElementById('year').value;
+            var Error = document.getElementById('error');
+
+            if ((dobday == "") || (dobmonth == "") || (dobyear == "")) {
+                Error.innerHTML = "<span style='color: red'><br><br>Filup all the fields</span>";
+            } else {
+                if ((dobday >= 1 && dobday <= 31) && (dobmonth >= 1 && dobmonth <= 12) && (dobyear >= 1900 && dobyear <= 2010)) {
+                    Error.innerHTML = "";
+                    document.getElementById('dob').innerHTML = "<span style='color: green'><br><br>Done!</span>";
+                } else {
+                    Error.innerHTML = "<span style='color:red'><br><br>Invalid Date Format [day - (1-31) month - (1-12) year - (1900-2010)]</span>";
+                    document.getElementById('dob').innerHTML = "";
+                }
+            }
+        }
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta email="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Validation</title>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend><label>DEGREE</label></legend>
+
+            <input type="checkbox" id="ssc" name="degree[]" value="SSC"> SSC
+            <input type="checkbox" id="hsc" name="degree[]" value="HSC"> HSC
+            <input type="checkbox" id="bsc" name="degree[]" value="BSc"> BSc
+            <input type="checkbox" id="msc" name="degree[]" value="MSc"> MSc
+            <span id="error"></span>
+            <span id="myDegree"></span>
+            <div style="margin-top:10px;">
+                <input type="submit" value="Submit" onclick="checkDegree()">
+            </div>
+        </fieldset>
+    </div>
+
+
+
+    <script>
+        function checkDegree() {
+            var SSC = document.getElementById('ssc');
+            var HSC = document.getElementById('hsc');
+            var BSC = document.getElementById('bsc');
+            var MSC = document.getElementById('msc');
+            if (SSC.checked == true || HSC.checked == true || BSC.checked == true || MSC.checked == true) {
+                document.getElementById('myDegree').innerHTML = "<span style='color: green'><br><br>Selected! </span>";
+                document.getElementById('error').innerHTML = "";
+            } else {
+                document.getElementById('error').innerHTML = "<span style='color: red'><br><br>No degree is selected</span>";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
