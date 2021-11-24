@@ -1,0 +1,1 @@
+const operatorElement = document.getElementById("operator");
